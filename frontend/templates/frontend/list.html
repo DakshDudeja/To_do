@@ -138,7 +138,7 @@
 
 
 
-			var url = 'http://127.0.0.1:8000/api/task-list/'
+			var url = 'https://todo5.herokuapp.com/api/task-list/'
 
 			fetch(url)
 			.then((resp) => resp.json())
@@ -228,9 +228,9 @@
 		form.addEventListener('submit', function(e){
 			e.preventDefault()
 			console.log('Form submitted')
-			var url = 'http://127.0.0.1:8000/api/task-create/'
+			var url = 'https://todo5.herokuapp.com/api/task-create/'
 			if (activeItem != null){
-				var url = `http://127.0.0.1:8000/api/task-update/${activeItem.id}/`
+				var url = `https://todo5.herokuapp.com/api/task-update/${activeItem.id}/`
 				activeItem = null
 			}
 
@@ -263,7 +263,7 @@
 
 		function deleteItem(item){
 			console.log('Delete clicked')
-			fetch(`http://127.0.0.1:8000/api/task-delete/${item.id}/`, {
+			fetch(`https://todo5.herokuapp.com/api/task-delete/${item.id}/`, {
 				method:'DELETE', 
 				headers:{
 					'Content-type':'application/json',
@@ -278,7 +278,7 @@
 			console.log('Strike clicked')
 
 			item.completed = !item.completed
-			fetch(`http://127.0.0.1:8000/api/task-update/${item.id}/`, {
+			fetch(`https://todo5.herokuapp.com/api/task-update/${item.id}/`, {
 				method:'POST', 
 				headers:{
 					'Content-type':'application/json',
